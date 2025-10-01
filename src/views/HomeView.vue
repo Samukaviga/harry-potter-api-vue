@@ -19,25 +19,25 @@
           @click="$store.dispatch('loadAllGryffindor')"
           class="bg-button text-gray-200 text-2xl py-2 px-5 border border-violet-100 rounded-2xl"
         >
-          Gryffindor
+          Grifinória
         </button>
         <button
           @click="$store.dispatch('loadAllSlytherin')"
           class="bg-button text-gray-200 text-2xl py-2 px-5 border border-violet-100 rounded-2xl"
         >
-          Slytherin
+          Sonserina
         </button>
         <button
           @click="$store.dispatch('loadAllRavenclaw')"
           class="bg-button text-gray-200 text-2xl py-2 px-5 border border-violet-100 rounded-2xl"
         >
-          Ravenclaw
+          Corvinal
         </button>
         <button
           @click="$store.dispatch('loadAllHuffepuff')"
           class="bg-button text-gray-200 text-2xl py-2 px-5 border border-violet-100 rounded-2xl"
         >
-          Huffepuff
+          Lufa-Lufa
         </button>
       </div>
     </div>
