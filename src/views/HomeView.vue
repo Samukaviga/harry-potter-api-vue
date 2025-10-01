@@ -44,7 +44,7 @@
 
     <div class="border-t-1 border-white w-[70%] mt-10"></div>
 
-    <div class="container flex flex-wrap justify-center mt-5 mb-10 gap-5">
+    <div class="container px-2 flex flex-wrap justify-center mt-5 mb-10 gap-5">
       <!-- CARD -->
       <div
         v-for="(character, index) in characters"
