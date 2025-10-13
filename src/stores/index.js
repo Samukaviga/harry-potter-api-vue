@@ -5,6 +5,7 @@ export default createStore({
     //sao os dados
     state: {
         characters: [],
+        character: [],
     },
     mutations: {
 
@@ -33,9 +34,31 @@ export default createStore({
             state.characters = characters;
         },
 
+        loadCharacter(state, character) {
+            //a mutation altera o state
+            state.character = character;
+        },
+
 
     },
     actions: {
+
+
+        loadCharacter({ commit }, character) {
+
+            axios.get(`https://hp-api.onrender.com/api/character/${character}`)
+                .then(function (response) {
+
+                    // a action invoca o mutation
+                    commit('loadCharacter', response.data) //seria o mutation
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+        },
+
 
         loadAllCharacters({ commit }) {
 

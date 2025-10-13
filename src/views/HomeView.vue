@@ -51,7 +51,7 @@
         :key="index"
         class="w-90 bg-card border border-gray-200 hover:border-violet-500 rounded-lg shadow-sm"
       >
-        <a href="#">
+        <router-link :to="{ name: 'Details', params: { id: character.id } }">
           <img
             v-if="character.image"
             class="rounded-t-lg w-full h-100 object-cover object-top"
@@ -65,7 +65,7 @@
             src="@/assets/images/chapeu.webp"
             alt="Champeu Misterioso"
           />
-        </a>
+        </router-link>
         <div class="p-5">
           <h5 class="mb-2 text-2xl text-gray-200">{{ character.name }}</h5>
 
@@ -80,6 +80,13 @@
               class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-button border rounded-lg"
             >
               Estudante
+            </a>
+            <a
+              v-if="character.hogwartsStaff"
+              href="#"
+              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-button border rounded-lg"
+            >
+              Funcionario
             </a>
             <a
               href="#"
