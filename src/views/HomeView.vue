@@ -49,7 +49,7 @@
       <div
         v-for="(character, index) in characters"
         :key="index"
-        class="w-90 bg-card border border-gray-200 hover:border-violet-500 rounded-lg shadow-sm"
+        class="w-90 bg-card border border-gray-200 hover:border-violet-500 rounded-lg shadow-sm transition-all hover:scale-105"
       >
         <router-link :to="{ name: 'Details', params: { id: character.id } }">
           <img
@@ -119,10 +119,12 @@ export default defineComponent({
     this.$store.dispatch("loadAllCharacters");
   },
 
-  computed: mapState([
-    // como o nome é o mesmo que o do state, podemos passar somente a string
-    "characters",
-  ]),
+  computed: {
+    ...mapState([
+      // como o nome é o mesmo que o do state, podemos passar somente a string
+      "characters",
+    ]),
+  },
 
   setup() {
     onMounted(() => {
