@@ -95,7 +95,7 @@ import { mapState } from "vuex";
 import ItemStatus from "@/components/ui/ItemStatus.vue";
 
 export default defineComponent({
-  name: "home",
+  name: "Home",
   data() {
     return {};
   },
