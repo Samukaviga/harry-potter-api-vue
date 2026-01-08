@@ -74,26 +74,11 @@
           <p class="mb-3 font-normal text-gray-500"></p>
 
           <div class="flex gap-2">
-            <a
-              v-if="character.hogwartsStudent"
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-button border rounded-lg"
-            >
-              Estudante
-            </a>
-            <a
-              v-if="character.hogwartsStaff"
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-button border rounded-lg"
-            >
-              Funcionario
-            </a>
-            <a
-              href="#"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-button border rounded-lg"
-            >
-              {{ character.alive ? "Vivo" : "Morto" }}
-            </a>
+            <ItemStatus v-if="character.hogwartsStudent" name="Estudante" />
+
+            <ItemStatus v-if="character.hogwartsStaff" name="Funcionario" />
+
+            <ItemStatus :name="character.alive ? 'Vivo' : 'Morto'" />
           </div>
         </div>
       </div>
@@ -107,6 +92,7 @@ import { defineComponent } from "vue";
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
 import { mapState } from "vuex";
+import ItemStatus from "@/components/ui/ItemStatus.vue";
 
 export default defineComponent({
   name: "home",
@@ -117,6 +103,10 @@ export default defineComponent({
   created() {
     //invocando uma action
     this.$store.dispatch("loadAllCharacters");
+  },
+
+  components: {
+    ItemStatus,
   },
 
   computed: {
